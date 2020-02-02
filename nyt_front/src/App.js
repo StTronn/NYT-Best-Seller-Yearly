@@ -1,19 +1,13 @@
 import React from 'react';
 import './App.css';
+import YearlyList from './components/YearlyList';
 
-class App extends React.Component() {
-  constructor(props){
-    super(props);
-    this.state={
-
-    }
-  }
-
-  render(){
+class App extends React.Component {
+	
+  render() {
     return (
-      <div>hello</div>
-    );    
+		<YearlyList></YearlyList>
+    );
   }
 }
-
 export default App;
