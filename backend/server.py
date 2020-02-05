@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask
 from flask import g
 import sqlite3
 from helpers import get_dates
@@ -57,17 +57,17 @@ def yearly_top(page=0):
     if page==None:
         page=0
     if page*10>max_count-10:
-        page=18
+        page=0
     offset= page*10
     l=query_db("SELECT * FROM Books ORDER BY score desc LIMIT 10 OFFSET ?",(offset,))
     ret["books"]=l
     ret=jsonify(ret)
-    return ret 
+    return ret
 
 @app.route("/heatmap/<id>")
 @cross_origin()
 def heatmap(id):
-    
+
     l=query_db("SELECT * FROM entries WHERE id = ?",(id,))
     dates=get_dates()
     ret={}
