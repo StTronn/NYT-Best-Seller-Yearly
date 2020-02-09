@@ -59,9 +59,10 @@ class YearlyList extends React.Component {
                     ))
                 }
             </Cointainer>
-
-            <Button onClick={this.Prev} disabled={!(page>0)}>&lt;</Button>
-            <Button onClick={this.Next}>&gt;</Button>
+            <ButtonWrapper>
+                <Prev onClick={this.Prev} disabled={!(page>0)}>&lt;</Prev>
+                <Next onClick={this.Next}>&gt;</Next>
+            </ButtonWrapper>
             </div>
         )
     }
@@ -75,6 +76,10 @@ const Cointainer=styled.div `
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows:auto;
 `
+const ButtonWrapper = styled.div `
+    display:grid;
+    grid-template-columns:1fr 1fr;
+`
 const Button = styled.button `
     width: 74px;
     height: 60px;
@@ -86,9 +91,13 @@ const Button = styled.button `
     color: gray;
     font-size: 2.0em;
     font-weight: bold;
-    margin: 0 auto;
 `
 const Prev= styled(Button) `
-    
+    margin-left:auto;
+    margin-right:10px; 
+`
+const Next= styled(Button) `
+    margin-right:auto;
+    margin-left:10px; 
 `
 export default YearlyList;
