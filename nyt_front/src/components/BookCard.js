@@ -35,7 +35,6 @@ class BookCard extends React.Component {
 
     render() {
         let { book } = this.props;
-        console.log(book);
         return (
             <Cointainer>
                    <h2>{book.rank}</h2> 
