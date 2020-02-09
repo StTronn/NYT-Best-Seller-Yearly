@@ -3,20 +3,27 @@ import styled from 'styled-components';
 
 
 const Cointainer = styled.div`
-    display:grid;
-    margin :40px;
-	height:40vh;
-	width:20vw;
-	grid-template-rows: 1fr 1fr;
-
+    display:inline-grid;
+    height:65vh;
+    margin:20px;
+    width:20vw;
+    grid-template-rows:60px 1fr 1fr;
 `
 
-const Heading1 = styled.h2`
-       display:inline; 
+const Heading1 = styled.div`
+    margin-bottom: 10px;
+`
+const Author = styled.span `
+    font-weight: 700;
+    font-size: 12px;
 `
 
+const Weeks = styled.span `
+    font-weight:400;
+    font-size : 12px;
+`
 const Image = styled.img  `
-    height:18vh;    
+    height:100%;    
 `
 //rank
 //img
@@ -31,20 +38,20 @@ class BookCard extends React.Component {
         console.log(book);
         return (
             <Cointainer>
+                   <h2>{book.rank}</h2> 
                 <div>
-                   <Heading1>{book.rank}</Heading1> 
                     <Image src={book.imageLink} />
                 </div>
                 <div>
                     <br />
-                    <h2>{book.name}</h2>
-                    <h2>{book.author}</h2>
+                    <Heading1>{book.name}</Heading1>
+                    <Author>{book.author}</Author>
                     <br />
-                    <h3>{book.totalWeeks} weeks on list </h3>
+                    <Weeks>{book.totalWeeks} weeks on list </Weeks>
                 </div>
             </Cointainer>
         )
-	}
+    }
 }
 
 export default BookCard;

@@ -1,5 +1,20 @@
 import React from 'react';
 import BookCard from '../components/BookCard';
+import styled from 'styled-components';
+
+
+const Cointainer=styled.div `
+    display:grid;
+    margin-left:95px;
+    align-content:center;
+    justify-content:center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:auto;
+`
+
+
+
+
 class YearlyList extends React.Component {
     constructor(props) {
         super(props)
@@ -24,14 +39,14 @@ class YearlyList extends React.Component {
 
 		console.log(books);
         return (
-			<div>
+			<Cointainer>
 				{books.length !== 0 && 
 						books.map(book=>(
 						
 							<BookCard book={book} id={book.id}/>
 						))
 				}
-			</div>
+			</Cointainer>
         )
     }
 } 
