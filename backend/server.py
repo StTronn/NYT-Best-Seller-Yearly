@@ -78,6 +78,14 @@ def heatmap(id):
     return jsonify({"list":list(ret.values())})
 
 
+@app.route("/book_info/<id>")
+@cross_origin()
+def book_info(id):
+    l=query_db("SELECT * FROM Books WHERE id= ?",(id,))
+    return  jsonify(l)
+
+
+
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
