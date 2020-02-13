@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import {Link} from 'react-router-dom'
 
 const Cointainer = styled.div`
     display:inline-grid;
@@ -36,6 +36,7 @@ class BookCard extends React.Component {
     render() {
         let { book } = this.props;
         return (
+           <Link to={this.props.id}> 
             <Cointainer>
                    <h2>{book.rank}</h2> 
                 <div>
@@ -49,6 +50,7 @@ class BookCard extends React.Component {
                     <Weeks>{book.totalWeeks} weeks on list </Weeks>
                 </div>
             </Cointainer>
+            </Link>
         )
     }
 }
