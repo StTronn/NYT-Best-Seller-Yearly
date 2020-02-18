@@ -25,31 +25,34 @@ const Weeks = styled.span`
 const Image = styled.img`
   height: 100%;
 `;
-//rank
-//img
-//name
-//autor
-//totalweeks
-//14
+
 class BookCard extends React.Component {
   render() {
     let { book, id } = this.props;
     return (
-      <Link to={"/" + id}>
-        <Cointainer>
-          <h2>{book.rank}</h2>
-          <div>
+      <Cointainer>
+        <h2>{book.rank}</h2>
+        <div>
+          <Link
+            to={"/" + id}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Image src={book.imageLink} />
-          </div>
-          <div>
-            <br />
+          </Link>
+        </div>
+        <div>
+          <br />
+          <Link
+            to={"/" + id}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Heading1>{book.name}</Heading1>
-            <Author>{book.author}</Author>
-            <br />
-            <Weeks>{book.totalWeeks} weeks on list </Weeks>
-          </div>
-        </Cointainer>
-      </Link>
+          </Link>
+          <Author>{book.author}</Author>
+          <br />
+          <Weeks>{book.totalWeeks} weeks on list </Weeks>
+        </div>
+      </Cointainer>
     );
   }
 }

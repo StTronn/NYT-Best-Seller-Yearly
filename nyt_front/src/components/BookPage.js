@@ -14,6 +14,10 @@ const Rank = styled.div`
   margin-left: 10px;
 `;
 
+const Info = styled.div`
+  padding-left: 40px;
+`;
+
 const Image = styled.img`
   height: 200px;
   float: left;
@@ -81,6 +85,12 @@ class BookPage extends React.Component {
                 </span>
               </p>
             </div>
+            <Info>
+              <h4>page count : {book.pageCount}</h4>
+              <h4>score : {book.score}</h4>
+              <h4>total weeks : {book.totalWeeks}</h4>
+              <h4>first appearance : {book.firstDate}</h4>
+            </Info>
           </Cointainer>
         )}
       </div>
