@@ -11,6 +11,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route path="/:id">
+            <NavBar />
             <BookPage />
           </Route>
           <Route path="/">

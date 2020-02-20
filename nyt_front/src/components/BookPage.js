@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
+import HeatMap from "./HeatMap";
 
 const Cointainer = styled.div`
   display: grid;
@@ -93,6 +94,7 @@ class BookPage extends React.Component {
             </Info>
           </Cointainer>
         )}
+        <HeatMap />
       </div>
     );
   }
