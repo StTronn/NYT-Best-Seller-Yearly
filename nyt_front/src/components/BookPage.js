@@ -6,7 +6,7 @@ import HeatMap from "./HeatMap";
 const Cointainer = styled.div`
   display: grid;
   width: 100%;
-  height: auto;
+  height: 80vh;
   grid-template-columns: 5vw auto 40vw;
 `;
 
@@ -24,7 +24,7 @@ const Image = styled.img`
   float: left;
   margin-right: 40px;
   margin-top: 20px;
-  margin-bottom: 100%;
+  margin-bottom: auto;
 `;
 
 class BookPage extends React.Component {

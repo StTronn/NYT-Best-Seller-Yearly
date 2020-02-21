@@ -8,13 +8,6 @@ export default class HeatMap extends React.Component {
   }
 
   render() {
-    const temperatureData = [8, 5, 13, 9, 12];
-    d3.select(this.refs.heatmap)
-      .selectAll("h2")
-      .data(temperatureData)
-      .enter()
-      .append("h2")
-      .text("New Temperature");
-    return <div ref="heatmap"></div>;
+    return <div id="heatmap">todo</div>;
   }
 }
