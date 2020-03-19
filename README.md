@@ -2,8 +2,9 @@
 
 The following project ranked all the non fiction books based on their weekly rankings and provides a brief information about the books and data about their rankings on the list 
 
-![screenshot]('./pic1.png')
-![screenshot]('./pic2.png')
+![screenshot](./pic2.png)
+
+![screenshot](./pic1.png)
 
 ## Run Locally
 
