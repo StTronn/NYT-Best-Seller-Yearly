@@ -6,7 +6,7 @@ import HeatMap from "./HeatMap";
 const Cointainer = styled.div`
   display: grid;
   width: 100%;
-  height: 80vh;
+  height: 50vh;
   grid-template-columns: 5vw auto 40vw;
 `;
 
@@ -32,6 +32,7 @@ class BookPage extends React.Component {
     super(props);
     this.state = {
       book: null,
+      heatmap: null,
       readMore: false
     };
   }
@@ -45,8 +46,20 @@ class BookPage extends React.Component {
       })
       .then(data => {
         let book = data[0];
-        console.log(book);
         this.setState({ book });
+      })
+      .catch(() => {
+        console.log("error couldn't fetch ");
+      });
+
+    fetch(`http://localhost:5000/heatmap/${id}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        let heatmap = data["list"];
+        console.log(heatmap);
+        this.setState({ heatmap });
       })
       .catch(() => {
         console.log("error couldn't fetch ");
@@ -64,7 +77,6 @@ class BookPage extends React.Component {
     let descSize = 0;
     let shortDesc = "";
     if (book) {
-      console.log(book);
       descSize = book.description.length;
       shortDesc = book.description.slice(0, Math.min(180, descSize));
     }
@@ -94,7 +106,7 @@ class BookPage extends React.Component {
             </Info>
           </Cointainer>
         )}
-        <HeatMap />
+        <HeatMap data={this.state.heatmap} />
       </div>
     );
   }
